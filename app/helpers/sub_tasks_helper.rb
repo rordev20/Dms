@@ -2,9 +2,9 @@ module SubTasksHelper
   def get_target_hours
     today = Date.today
     if today.saturday? || today.sunday?
-      "4 hrs"
+      "#{SubTask::WEEKEND_MAX} hrs"
     else
-      "2 hrs"
+      "#{SubTask::WEEKDAY_MAX} hrs"
     end
   end
 
@@ -22,17 +22,17 @@ module SubTasksHelper
     if today.saturday? || today.sunday?
       if get_achieved == 0.0
         "badge text-bg-danger"
-      elsif get_achieved >= 1 && get_achieved < 4
+      elsif get_achieved >= SubTask::WEEKEND_MIN && get_achieved < SubTask::WEEKEND_MAX
         "badge text-bg-warning"
-      elsif get_achieved >= 4
+      elsif get_achieved >= SubTask::WEEKEND_MAX
         "badge text-bg-success"
       end
     else
       if get_achieved == 0.0
         "badge text-bg-danger"
-      elsif get_achieved >= 1 && get_achieved < 2
+      elsif get_achieved >= SubTask::WEEKDAY_MIN && get_achieved < SubTask::WEEKDAY_MAX
         "badge text-bg-warning"
-      elsif get_achieved >= 2
+      elsif get_achieved >= SubTask::WEEKDAY_MAX
         "badge text-bg-success"
       end
     end

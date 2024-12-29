@@ -4,6 +4,12 @@ class SubTask < ApplicationRecord
 
   before_save :set_value_from_parent_if_blank
 
+  WEEKDAY_MIN = 1
+  WEEKDAY_MAX = 2
+  WEEKEND_MIN = 1
+  WEEKEND_MAX = 4
+
+
 
   def set_value_from_parent_if_blank
     task = self.task
