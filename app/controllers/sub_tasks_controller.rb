@@ -8,7 +8,7 @@ class SubTasksController < ApplicationController
     week_wise_data = []
     all_seven_days = []
     series_temp_data = {}
-    @sub_tasks = SubTask.where(sprint: @sprint)
+    @sub_tasks = SubTask.where(sprint: @sprint).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
     sub_tasks_in_last_seven_days = SubTask.includes(:task).where('sub_tasks.created_at >= ?', 7.days.ago)
     task_ids = sub_tasks_in_last_seven_days.pluck(:task_id)
     all_task_names = Task.where(id: task_ids).pluck(:name)

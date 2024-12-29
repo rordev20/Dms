@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_12_27_152356) do
     t.integer "actual_minute", default: 0
     t.string "official_documentation"
     t.string "video_link"
-    t.datetime "activity_date", default: "2024-12-29 07:11:10"
+    t.datetime "activity_date", default: "2024-12-29 17:12:58"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sprint_id"], name: "index_sub_tasks_on_sprint_id"

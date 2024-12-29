@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= form.hidden_field :sprint_id, value: @sprint.id %>
+  <%= form.hidden_field :sprint_id, value: @sprint.try(:id) %>
 
   <div>
     <%= form.label :task_id, style: "display: block" %>
