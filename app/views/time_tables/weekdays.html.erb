@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+<h3>Week Days Timetable</h3>
+<br />
+<br />
+<div id="tasks">
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Description</th>
+        <th scope="col">Planned hour</th>
+        <th scope="col">Planned minute</th>
+        <th scope="col">Task timing</th>
+        <th scope="col">Official documentation</th>
+        <th scope="col">Video link</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @time_tables.each do |time_table| %>
+        <%= render time_table %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "New time table ", new_time_table_path %>

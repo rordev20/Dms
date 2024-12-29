@@ -1,0 +1,54 @@
+<%= form_with(model: sub_task) do |form| %>
+  <% if sub_task.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sub_task.errors.count, "error") %> prohibited this sub_task from being saved:</h2>
+
+      <ul>
+        <% sub_task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :sprint_id, value: @sprint.id %>
+
+  <div>
+    <%= form.label :task_id, style: "display: block" %>
+    <%= form.collection_select :task_id, Task.all.order(:name), :id, :name,  {:include_blank => "Please select"} %>
+  </div>
+
+  <div>
+    <%= form.label :planned_hour, style: "display: block" %>
+    <%= form.number_field :planned_hour %>
+  </div>
+
+  <div>
+    <%= form.label :planned_minute, style: "display: block" %>
+    <%= form.number_field :planned_minute %>
+  </div>
+
+  <div>
+    <%= form.label :task_timing, style: "display: block" %>
+    <%= form.text_field :task_timing %>
+  </div>
+
+  <div>
+    <%= form.label :actual_hour, style: "display: block" %>
+    <%= form.number_field :actual_hour %>
+  </div>
+
+  <div>
+    <%= form.label :actual_minute, style: "display: block" %>
+    <%= form.number_field :actual_minute %>
+  </div>
+
+  <div>
+    <%= form.label :activity_date, style: "display: block" %>
+    <%= form.datetime_field :activity_date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

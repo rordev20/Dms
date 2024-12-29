@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: one
+  description: MyText
+  planned_hour: 1
+  planner_min: 1
+  task_timing: MyString
+  official_documentation: MyString
+  video_link: MyString
+  activity_date: 2024-12-27 20:53:56
+  day_type: 1
+  is_active: false
+
+two:
+  task: two
+  description: MyText
+  planned_hour: 1
+  planner_min: 1
+  task_timing: MyString
+  official_documentation: MyString
+  video_link: MyString
+  activity_date: 2024-12-27 20:53:56
+  day_type: 1
+  is_active: false

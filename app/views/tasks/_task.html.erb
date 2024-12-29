@@ -1,0 +1,23 @@
+<tr>
+  <th scope="row"><%= "#{index + 1}" rescue nil %></th>
+  <td><%= task.name %></td>
+  <td><%= task.description %></td>
+  <td><%= link_to "#{task.official_documentation}", task.official_documentation, target: "_blank" %></td>
+  <td><%= link_to "#{task.video_link}", task.video_link, target: "_blank" %></td>
+  <td><%= task.is_active %></td>
+  <td><%= link_to "Show", task %> | <%= link_to "Edit", edit_task_path(task) %> </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

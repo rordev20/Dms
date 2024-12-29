@@ -1,0 +1,11 @@
+<tr>
+  <th scope="row">1</th>
+  <td><%= time_table.task.name %></td>
+  <td><%= time_table.description %></td>
+  <td><%= time_table.planned_hour %></td>
+  <td><%= time_table.planned_minute %></td>
+  <td><%= time_table.task_timing %></td>
+  <td><%= link_to "#{time_table.official_documentation}", time_table.official_documentation, target: "_blank" %></td>
+  <td><%= link_to "#{time_table.video_link}", time_table.video_link, target: "_blank" %></td>
+  <td><%= link_to "Show", time_table %> | <%= link_to "Edit", edit_time_table_path(time_table) %></td>
+</tr>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sub_task: one
+  punch_in: 2024-12-27 20:47:42
+  punch_out: 2024-12-27 20:47:42
+
+two:
+  sub_task: two
+  punch_in: 2024-12-27 20:47:42
+  punch_out: 2024-12-27 20:47:42

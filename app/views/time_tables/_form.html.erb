@@ -1,0 +1,49 @@
+<%= form_with(model: time_table) do |form| %>
+  <% if time_table.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(time_table.errors.count, "error") %> prohibited this time_table from being saved:</h2>
+
+      <ul>
+        <% time_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :sprint_id, value: @sprint.id %>
+
+  <div>
+    <%= form.label :task_id, style: "display: block" %>
+    <%= form.collection_select :task_id, Task.all.order(:name), :id, :name,  {:include_blank => "Please select"} %>
+  </div>
+
+  <div>
+    <%= form.label :planned_hour, style: "display: block" %>
+    <%= form.number_field :planned_hour %>
+  </div>
+
+  <div>
+    <%= form.label :planned_minute, style: "display: block" %>
+    <%= form.number_field :planned_minute %>
+  </div>
+
+  <div>
+    <%= form.label :task_timing, style: "display: block" %>
+    <%= form.text_field :task_timing %>
+  </div>
+
+  <div>
+    <%= form.label :day_type, style: "display: block" %>
+    <%= form.select :day_type, [['weekday', "weekday"], ['weekend', "weekend"]] %>
+  </div>
+
+  <div>
+    <%= form.label :is_active, style: "display: block" %>
+    <%= form.check_box :is_active %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

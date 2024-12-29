@@ -1,0 +1,32 @@
+<%= form_with(model: punch) do |form| %>
+  <% if punch.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+
+      <ul>
+        <% punch.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :sub_task_id, style: "display: block" %>
+    <%= form.text_field :sub_task_id %>
+  </div>
+
+  <div>
+    <%= form.label :punch_in, style: "display: block" %>
+    <%= form.datetime_field :punch_in %>
+  </div>
+
+  <div>
+    <%= form.label :punch_out, style: "display: block" %>
+    <%= form.datetime_field :punch_out %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

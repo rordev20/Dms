@@ -1,0 +1,10 @@
+<tr>
+  <th scope="row"><%= "#{index + 1}" rescue nil %></th>
+  <td><%= sprint.name %></td>
+  <td><%= sprint.start_date.strftime("%d %b %Y") rescue nil %></td>
+  <td><%= sprint.end_date.strftime("%d %b %Y") rescue nil %></td>
+  <td><%= sprint.active %></td>
+  <td><%= link_to "Show", sprint %> | <%= link_to "Edit", edit_sprint_path(sprint) %> | <%= link_to "Set As Current", set_as_current_sprint_path(sprint) %></td>
+</tr>
+
+

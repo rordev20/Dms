@@ -1,0 +1,14 @@
+<tr>
+  <th scope="row">1</th>
+  <td><%= sub_task.task.name %></td>
+  <td><%= sub_task.description %></td>
+  <td><%= sub_task.planned_hour %></td>
+  <td><%= sub_task.planned_minute %></td>
+  <td><%= sub_task.task_timing %></td>
+  <td><%= link_to "#{sub_task.official_documentation}", sub_task.official_documentation, target: "_blank" %></td>
+  <td><%= link_to "#{sub_task.video_link}", sub_task.video_link, target: "_blank" %></td>
+  <td><%= sub_task.actual_hour %></td>
+  <td><%= sub_task.actual_minute %></td>
+  <td><%= sub_task.activity_date %></td>
+  <td><%= link_to "Show", sub_task %> | <%= link_to "Edit", edit_sub_task_path(sub_task) %> | <%= link_to "Punch In", "#" %> | <%= link_to "Punch Out", "#" %></td>
+</tr>

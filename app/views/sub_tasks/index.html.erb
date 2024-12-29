@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+<h3>Sub tasks<span class="badge text-bg-secondary" style='margin-left: 20px;'><%= "#{@sprint.try(:name)}" %></span></h3>
+
+<%= button_to "Sync Default Time Table" , sync_default_for_today_sub_tasks_path, method: :get, class: "btn btn-primary float-end syn_default_botton_margin_top" %>
+<div id="tasks">
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Description</th>
+        <th scope="col">Planned hour</th>
+        <th scope="col">Planned minute</th>
+        <th scope="col">Task timing</th>
+        <th scope="col">Official documentation</th>
+        <th scope="col">Video link</th>
+        <th scope="col">Actual hour</th>
+        <th scope="col">Actual minute</th>
+        <th scope="col">Activity date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sub_tasks.each do |sub_task| %>
+        <%= render sub_task %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "New sub task", new_sub_task_path %>
+
+
+<%= render partial: 'weekly_charts' %>
+
+<style>
+  .syn_default_botton_margin_top{
+    margin-top: -50px !important;
+  }
+</style>  

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @punch %>
+
+<div>
+  <%= link_to "Edit this punch", edit_punch_path(@punch) %> |
+  <%= link_to "Back to punches", punches_path %>
+
+  <%= button_to "Destroy this punch", @punch, method: :delete %>
+</div>

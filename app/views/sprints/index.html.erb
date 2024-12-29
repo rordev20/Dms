@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<h3>Sprints</h3>
+<div id="sprints">
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Is active</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sprints.each_with_index do |sprint, index| %>
+        <%= render partial: 'sprint', locals: {sprint: sprint, index: index } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "New sprint", new_sprint_path %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h3>Punches</h3>
+
+<div id="punches">
+  <% @punches.each do |punch| %>
+    <%= render punch %>
+    <p>
+      <%= link_to "Show this punch", punch %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New punch", new_punch_path %>

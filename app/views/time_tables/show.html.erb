@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @time_table %>
+
+<div>
+  <%= link_to "Edit this time table", edit_time_table_path(@time_table) %> |
+  <%= link_to "Back to time tables", time_tables_path %>
+
+  <%= button_to "Destroy this time table", @time_table, method: :delete %>
+</div>

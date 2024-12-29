@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h3>Time tables</h3>
+
+<div id="time_tables">
+  <% @time_tables.each do |time_table| %>
+    <%= render time_table %>
+    <p>
+      <%= link_to "Show this time table", time_table %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New time table", new_time_table_path %>
