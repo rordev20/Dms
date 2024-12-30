@@ -14,13 +14,13 @@ module SubTasksHelper
     sub_tasks.each do |st|
       duration += st.actual_hour.to_f + st.actual_minute.to_f / 60
     end
-    duration.to_f
+    duration.to_f.round(2)
   end
 
   def get_achieved_class
     today = Date.today
     if today.saturday? || today.sunday?
-      if get_achieved == 0.0
+      if get_achieved == 0.0 || get_achieved <= SubTask::WEEKEND_MIN
         "badge text-bg-danger"
       elsif get_achieved >= SubTask::WEEKEND_MIN && get_achieved < SubTask::WEEKEND_MAX
         "badge text-bg-warning"
@@ -28,7 +28,7 @@ module SubTasksHelper
         "badge text-bg-success"
       end
     else
-      if get_achieved == 0.0
+      if get_achieved == 0.0 || get_achieved <= SubTask::WEEKDAY_MIN
         "badge text-bg-danger"
       elsif get_achieved >= SubTask::WEEKDAY_MIN && get_achieved < SubTask::WEEKDAY_MAX
         "badge text-bg-warning"
