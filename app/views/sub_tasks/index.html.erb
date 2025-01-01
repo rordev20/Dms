@@ -3,12 +3,12 @@
 
 <%= button_to "Sync Default Time Table" , sync_default_for_today_sub_tasks_path, method: :get, class: "btn btn-primary float-end syn_default_botton_margin_top" %>
 <div id="tasks">
-  <table class="table table-bordered border-primary">
+  <table class="table table-bordered border-primary" style="width:100%">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Task</th>
-        <th scope="col">Description</th>
+        <th scope="col" style="width:15%">Task</th>
+        <th scope="col" style="width:15%">Description</th>
         <th scope="col">Planned hour</th>
         <th scope="col">Planned minute</th>
         <th scope="col">Task timing</th>
@@ -16,8 +16,8 @@
         <th scope="col">Video link</th>
         <th scope="col">Actual hour</th>
         <th scope="col">Actual minute</th>
-        <th scope="col">Activity date</th>
-        <th scope="col">Action</th>
+        <th scope="col" style="width:12%">Activity date</th>
+        <th scope="col" style="width:22%">Action</th>
       </tr>
     </thead>
     <tbody>
