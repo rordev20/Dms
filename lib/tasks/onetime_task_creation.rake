@@ -46,7 +46,7 @@ namespace :populate_data do
 
     Task.create!(name: "TypeScript", description: "TypeScript", official_documentation: "https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html", video_link: "")
 
-    Task.create!(name: "Store Procedure & Sql Advance + Database Engineering", description: "Store Procedure & Sql Advance + Database Engineering", official_documentation: "https://www.tutorialspoint.com/sql/sql-stored-procedures.htm", video_link: "")
+    Task.create!(name: "Store Procedure & Sql Advance + Database Engineering", description: "Store Procedure & Sql Advance + Database Engineering", official_documentation: "https://www.tutorialspoint.com/sql/sql-stored-procedures.htm", video_link: "https://www.udemy.com/course/microsoft-sql-for-beginners-sql-server-and-t-sql/learn/lecture/19088386#overview")
 
     Task.create!(name: "Maths", description: "Maths", official_documentation: "", video_link: "")
 
@@ -59,7 +59,7 @@ namespace :populate_data do
     Task.create!(name: "Others", description: "Other Tasks", official_documentation: "", video_link: "")
 
     Task.create!(name: "In-house project development", description: "In-house project development", official_documentation: "", video_link: "")
-
+    Task.create!(name: "AI", description: "AI Co-pilot by Microsoft", official_documentation: "https://github.com/features/copilot", video_link: "")
     puts "==============Task creation Completed=========================="
   end
 end
