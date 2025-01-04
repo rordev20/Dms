@@ -10,7 +10,7 @@
 <script>
 
   var categories = <%= @all_seven_days.map { |sd| sd }.to_json.html_safe %>;
-  var series = <%= @series_data.map {|sd| {name: sd[:name], data: sd[:data]}}.to_json.html_safe %>;
+  var series = <%= @series_data.map {|sd| {name: sd[:name], data: sd[:data].map {|d| d.round(2)}}}.to_json.html_safe %>;
   Highcharts.chart('container', {
     chart: {
         type: 'column'
