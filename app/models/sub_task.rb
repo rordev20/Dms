@@ -6,7 +6,7 @@ class SubTask < ApplicationRecord
 
   WEEKDAY_MIN = 1
   WEEKDAY_MAX = 2
-  WEEKEND_MIN = 1
+  WEEKEND_MIN = 2
   WEEKEND_MAX = 4
 
 
