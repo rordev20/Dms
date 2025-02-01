@@ -3,7 +3,7 @@ class SprintsController < ApplicationController
 
   # GET /sprints or /sprints.json
   def index
-    @sprints = Sprint.all
+    @sprints = Sprint.order('created_at DESC')
   end
 
   # GET /sprints/1 or /sprints/1.json

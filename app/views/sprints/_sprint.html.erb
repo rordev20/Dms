@@ -3,6 +3,12 @@
   <td><%= sprint.name %></td>
   <td><%= sprint.start_date.strftime("%d %b %Y") rescue nil %></td>
   <td><%= sprint.end_date.strftime("%d %b %Y") rescue nil %></td>
+  <% if sprint.active? %>
+    <td><%="#{(SubTask.where(sprint_id: sprint.id).sum(:actual_hour) + SubTask.where(sprint_id: sprint.id).sum(:actual_minute)/60.0 ).ceil}" + "/" + "#{(Date.today.mday * 2.533).ceil}" %></td>
+  <% else %>
+    <td><%= (SubTask.where(sprint_id: sprint.id).sum(:actual_hour) + SubTask.where(sprint_id: sprint.id).sum(:actual_minute)/60.0 ).ceil %></td>
+  <% end %>
+  <td><%= monthly_working_hrs %></td>
   <td><%= sprint.active %></td>
   <td><%= link_to "Show", sprint %> | <%= link_to "Edit", edit_sprint_path(sprint) %> | <%= link_to "Set As Current", set_as_current_sprint_path(sprint) %></td>
 </tr>

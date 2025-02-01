@@ -23,6 +23,7 @@ class TimeTablesController < ApplicationController
   # POST /time_tables or /time_tables.json
   def create
     @time_table = TimeTable.new(time_table_params)
+    @time_table.sprint_id = @sprint.id
 
     respond_to do |format|
       if @time_table.save
