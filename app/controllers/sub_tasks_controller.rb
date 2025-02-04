@@ -9,7 +9,7 @@ class SubTasksController < ApplicationController
     all_seven_days = []
     series_temp_data = {}
     @sub_tasks = SubTask.where(sprint: @sprint).where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
-    sub_tasks_in_last_seven_days = SubTask.includes(:task).where('sub_tasks.created_at >= ?', 7.days.ago)
+    sub_tasks_in_last_seven_days = SubTask.includes(:task).where('sub_tasks.created_at >= ?', 7.days.ago.end_of_day)
     task_ids = sub_tasks_in_last_seven_days.pluck(:task_id)
     all_task_names = Task.where(id: task_ids).pluck(:name)
     all_task_names.each do |task_name|
@@ -94,7 +94,6 @@ class SubTasksController < ApplicationController
   end
 
   def sync_default_for_today
-
     unless SubTask.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).exists?
       today = Date.today
       if today.saturday? || today.sunday? 
